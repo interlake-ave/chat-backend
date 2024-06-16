@@ -47,3 +47,11 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.named<Jar>("jar") {
+    manifest {
+        attributes(
+            "Main-Class" to "org.example.AppKt" // Replace with your main class
+        )
+    }
+}
