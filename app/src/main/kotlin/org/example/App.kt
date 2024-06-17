@@ -15,7 +15,7 @@ fun main() {
         routing {
             val connections = Collections.synchronizedSet<Connection?>(LinkedHashSet())
             val chatHistory = Collections.synchronizedList(mutableListOf<String>())
-            webSocket("/chat") {
+            webSocket("/") {
                 println("Adding user!")
                 val thisConnection = Connection(this)
                 connections += thisConnection
@@ -25,9 +25,9 @@ fun main() {
                         frame as? Frame.Text ?: continue
                         val receivedText = frame.readText()
                         val messageEvent = "text: $receivedText"
+                        chatHistory.add(messageEvent)
                         connections.forEach {
                             it.session.send(messageEvent)
-                            chatHistory.add(messageEvent)
                         }
                     }
                 } catch (e: Exception) {
