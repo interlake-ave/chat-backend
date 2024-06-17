@@ -19,9 +19,8 @@ plugins {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
-    }
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
+
 }
 
 dependencies {
@@ -51,8 +50,7 @@ java {
 
 application {
     // Define the main class for the application.
-//    mainClass = "org.example.AppKt"
-    mainClass.set("org.example.AppKt") //according to ktor
+    mainClass = "org.example.AppKt"
 }
 
 tasks.named<Test>("test") {
