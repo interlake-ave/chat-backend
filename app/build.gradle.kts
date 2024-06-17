@@ -39,6 +39,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
     implementation("io.ktor:ktor-server-core:2.3.11")
     implementation("io.ktor:ktor-server-netty:2.3.11")
+    implementation("ch.qos.logback:logback-classic:1.2.6")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
