@@ -20,14 +20,14 @@ fun main() {
                 val thisConnection = Connection(this)
                 connections += thisConnection
                 try {
-                    send(chatHistory.toString() + "You are connected! There are ${connections.count()} users here.")
+                    send("initial_messages: $chatHistory")
                     for (frame in incoming) {
                         frame as? Frame.Text ?: continue
                         val receivedText = frame.readText()
-                        val textWithUsername = "[${thisConnection.name}]: $receivedText"
+                        val messageEvent = "text: $receivedText"
                         connections.forEach {
-                            it.session.send(textWithUsername)
-                            chatHistory.add(textWithUsername)
+                            it.session.send(messageEvent)
+                            chatHistory.add(messageEvent)
                         }
                     }
                 } catch (e: Exception) {
