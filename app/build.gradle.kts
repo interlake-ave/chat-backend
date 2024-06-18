@@ -43,6 +43,7 @@ dependencies {
     implementation("io.ktor:ktor-server-sessions:2.3.11")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.11")
     implementation("io.ktor:ktor-server-websockets:2.3.11")
+    implementation("io.ktor:ktor-server-cors:2.3.11")
 
 
     implementation("ch.qos.logback:logback-classic:1.2.6")
